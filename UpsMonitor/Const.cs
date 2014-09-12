@@ -2,8 +2,14 @@
 {
     using System;
 
+    /// <summary>
+    /// Contains all "magic" string constants used in this project.
+    /// </summary>
     internal static class Const
     {
+        /// <summary>
+        /// Contains WMI commands and field names.
+        /// </summary>
         internal static class Wmi
         {
             internal const string SelectBatteryQuery = "select * from Win32_Battery";
@@ -13,6 +19,9 @@
             internal const string FieldEstimatedRunTime = "EstimatedRunTime";
         }
 
+        /// <summary>
+        /// Contains log messages.
+        /// </summary>
         internal static class Messages
         {
             internal const string ServiceInitialized = "Service initialized";
@@ -34,8 +43,13 @@
             internal const string GotCommandLineArguments = "Got command line arguments: {0}";
             internal const string FailedToInstallService = "Failed to install service.";
             internal const string FailedToUninstallService = "Failed to uninstall service";
+            internal const string UnknownCommand = "Unknown command: {0}, available commands: {1}, {2}";
+            internal const string PressAnyKeyToStop = "Press any key to stop service.";
         }
 
+        /// <summary>
+        /// Contains mapping of all battery statuses.
+        /// </summary>
         internal static class Status
         {
             internal const int IsDischarging = 1;
@@ -50,6 +64,9 @@
             internal const int IsPartiallyCharged = 10;
         }
 
+        /// <summary>
+        /// Contains textual description of all battery statuses.
+        /// </summary>
         internal static class StatusMessages
         {
             internal const string IsDischarging = "The battery is discharging";
@@ -64,6 +81,9 @@
             internal const string IsPartiallyCharged = "Partially Charged";
         }
 
+        /// <summary>
+        /// Contains configuration field names.
+        /// </summary>
         internal static class Config
         {
             internal const string MinimumBatteryLevel = "MinimumBatteryLevel";
@@ -71,6 +91,9 @@
             internal const string BatteryCheckInterval = "BatteryCheckInterval";
         }
 
+        /// <summary>
+        /// Contains default configuration values.
+        /// </summary>
         internal static class DefaultConfig
         {
             internal const uint MinimumBatteryLevel = 30;
@@ -78,10 +101,15 @@
             internal static readonly TimeSpan BatteryCheckInterval = TimeSpan.FromSeconds(30);
         }
 
+        /// <summary>
+        /// Contains the command line program commands.
+        /// </summary>
         internal static class Command
         {
             internal const string Install = "install";
             internal const string Uninstall = "uninstall";
+
+            internal const string UninstallSwitch = "/u";
         }
     }
 }
